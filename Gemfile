@@ -54,4 +54,6 @@ gem "active_model_serializers", "~> 0.10.10"
 
 gem "faker", "~> 1.9"
 
-gem 'pry'
+
+
+ruby '2.6.3'
