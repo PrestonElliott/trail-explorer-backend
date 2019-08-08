@@ -133,7 +133,7 @@ trail5 = Trail.create(
       description: Faker::Movies::BackToTheFuture.quote,
       location: (Faker::Address.city + ", " + Faker::Address.state),
       stars: rand(1..5),
-      image: img_arr.all.sample
+      image: img_arr.sample
     )
 end
 
