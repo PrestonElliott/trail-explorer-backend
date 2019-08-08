@@ -9,7 +9,7 @@ class TrailsController < ApplicationController
         lat = params[:lat].sub('!', '.')
         lon = params[:lon].sub('!', '.')
         url = "https://www.hikingproject.com/data/get-trails?lat=#{lat}&lon=#{lon}&maxResults=#{params[:max_results]}"
-        api_key = "200524977-84faacbb836e7961310518eab8e364d5"
+        api_key = "&key=#{ENV["TRAILS_API_KEY"]}"
         trails = JSON.parse(open(url + api_key).read)["trails"][0..39]
         sorted_trails = trails.sort_by{|t| t['stars']}.reverse
 
