@@ -5,8 +5,8 @@ Trip.destroy_all
 FutureTrip.destroy_all
 User.destroy_all
 
-andrew = User.create(name: "Andrew", email: 'andy@gmail.com', password: "123")
 preston = User.create(name: "Preston", email: 'preston@gmail.com', password: "123")
+andrew = User.create(name: "Andrew", email: 'andy@gmail.com', password: "123")
 romy = User.create(name: "Romy", email: 'romy@gmail.com', password: "123")
 paula = User.create(name: "Paula", email: 'paula@gmail.com', password: "123")
 dhara = User.create(name: "Dhara", email: 'dhara@gmail.com', password: "123")
@@ -38,6 +38,18 @@ f14 = Follow.create(followed_user: rose, user: paula)
 f15 = Follow.create(followed_user: rose, user: dhara)
 f16 = Follow.create(followed_user: rose, user: han)
 f17 = Follow.create(followed_user: rose, user: jae)
+
+
+
+img1 = "https://cdn-files.apstatic.com/hike/7023297_smallMed_1554844842.jpg"
+img2 = "https://cdn-files.apstatic.com/hike/7015863_smallMed_1554826913.jpg"
+img3 = "https://cdn-files.apstatic.com/hike/7025994_smallMed_1554913295.jpg"
+img4 = "https://cdn-files.apstatic.com/hike/7024143_smallMed_1554846342.jpg"
+img5 = "https://cdn-files.apstatic.com/hike/7059495_smallMed_1560691891.jpg"
+img6 = "https://cdn-files.apstatic.com/hike/7032144_smallMed_1554932569.jpg"
+img7 = "https://cdn-files.apstatic.com/hike/7043231_smallMed_1555107854.jpg"
+
+img_arr = [img1, img2, img3, img4, img5, img6, img7]
 
 trail1 = Trail.create(
     api_index: 7021422,
@@ -117,20 +129,20 @@ trail5 = Trail.create(
 25.times do
     Trip.create(
       user_id: User.all.sample.id,
-      title: Faker::Hipster.sentence(3),
-      description: Faker::Hipster.sentence,
-      location: Faker::Address.city,
+      title: Faker::Movies::BackToTheFuture.character,
+      description: Faker::Movies::BackToTheFuture.quote,
+      location: (Faker::Address.city + ", " + Faker::Address.state),
       stars: rand(1..5),
-      image: "https://cdn.theunion.com/wp-content/uploads/sites/3/2019/07/OUTDayHiker-GVU-072619-0-1.jpg"
+      image: img_arr.all.sample
     )
 end
 
 25.times do 
     FutureTrip.create(
         user_id: User.all.sample.id,
-        title: Faker::Hipster.sentence(3),
-        location: Faker::Address.city,
-        note: Faker::Hipster.sentence(9)
+        title: Faker::Movies::BackToTheFuture.character,
+        location: (Faker::Address.city + ", " + Faker::Address.state),
+        note: Faker::Movies::BackToTheFuture.quote
     )
 end
 
