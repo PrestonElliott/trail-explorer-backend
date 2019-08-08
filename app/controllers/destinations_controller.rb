@@ -24,6 +24,6 @@ class DestinationsController < ApplicationController
 
     private
     def destination_params
-        require(:destination).permit(:trail, :trek)
+        params.require(:destination).permit(:trail, :trek)
     end
 end
