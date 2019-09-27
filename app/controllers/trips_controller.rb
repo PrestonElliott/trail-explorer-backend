@@ -7,9 +7,7 @@ class TripsController < ApplicationController
 
         params[:trip][:trail_names].each { |trail_name|
             Destination.create(trek: @trip, trail_name: trail_name )
-        }
-            
-
+        }    
         render json: { trip: TripSerializer.new(@trip) }, status: :ok
     end
 
