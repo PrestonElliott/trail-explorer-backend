@@ -8,5 +8,4 @@ class UserSerializer < ActiveModel::Serializer
   def followed_users
     self.object.followed_users.map{|f| FollowedUserSerializer.new(f) }
   end
-
 end
