@@ -1,8 +1,7 @@
 class FollowsController < ApplicationController
     
-    def create 
-        @follow = Follow.create(follow_params)
-        render json: @follow
+    def create
+        render json: Follow.create(user_id: @user.id, followed_user_id: params[:followed_user_id])
     end
     
     def index
@@ -22,8 +21,8 @@ class FollowsController < ApplicationController
         @follow = Follow.destroy(params[:id])
     end
 
-    private
-    def follow_params
-        params.require(:follow).permit(:user_id, :followed_user_id)
-    end
+    # private
+    # def follow_params
+    #     params.require(:follow).permit(:user_id, :followed_user_id)
+    # end
 end

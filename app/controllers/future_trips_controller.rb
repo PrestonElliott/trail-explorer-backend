@@ -33,7 +33,7 @@ class FutureTripsController < ApplicationController
 
     private
     def future_trip_params
-        params.require(:future_trip).permit(:title, :note, :location)
+        params.require(:trip).permit(:title, :note, :location)
     end
     
 end
