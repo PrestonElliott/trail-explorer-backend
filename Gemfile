@@ -53,7 +53,3 @@ gem "jwt", "~> 2.2"
 gem "active_model_serializers", "~> 0.10.10"
 
 gem "faker", "~> 1.9"
-
-
-
-ruby '2.6.3'
