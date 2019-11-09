@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
 		begin
 			user_id = JWT.decode(self.request.headers['Authorization'], '+tree_+192$house')[0]['user_id']
 			@user = User.find(user_id)
-			rescue
+		  rescue
         end
 		@user
     end

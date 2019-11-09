@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
     
-    def create 
+    def create
         @trip = Trip.new(trip_params)
         @trip.user = @user
         @trip.save
